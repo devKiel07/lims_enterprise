@@ -23,6 +23,9 @@ button{cursor:pointer;border:0}
 .main-nav{display:flex;align-items:center;justify-content:center;gap:6px}
 .main-nav a{padding:9px 16px;border-radius:99px;color:var(--mut);font-size:.88rem;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
 .main-nav a:hover,.main-nav a:focus-visible{background:var(--bg);color:var(--blue)}
+.account-link{display:inline-flex;align-items:center;justify-content:center;padding:9px;border:1px solid var(--line);border-radius:50%;color:var(--ink);text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.account-link:hover,.account-link:focus-visible{background:var(--bg);border-color:var(--cyan);color:var(--blue)}
+.account-icon{width:19px;height:19px;flex:none}
 .cartbtn{background:var(--btn);color:#fff;border-radius:99px;padding:9px 15px;font-weight:600;display:flex;gap:9px;align-items:center;box-shadow:0 6px 16px rgba(0,119,192,.2);transition:transform .15s,box-shadow .2s,background .2s}
 .cartbtn:hover{background:var(--navy);box-shadow:0 8px 20px rgba(0,60,110,.25)}
 .cartbtn:active{transform:scale(.95)}
@@ -145,8 +148,8 @@ label{display:block;font-size:.8rem;font-weight:600;margin:10px 0 4px;color:var(
 .mq span::before{content:"✦";margin-right:10px;color:var(--aqua)}
 @keyframes mq{to{transform:translateX(-50%)}}
 .top{background:color-mix(in srgb,var(--card) 78%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-@media(max-width:640px){.top{gap:10px;padding:9px 4vw}.brand{gap:8px}.brand img{height:40px;width:44px}.brand-copy small{font-size:.55rem;letter-spacing:.08em}.main-nav{gap:0}.main-nav a{padding:8px 10px;font-size:.82rem}.cartbtn{gap:6px;padding:8px 11px;font-size:.85rem}}
-@media(max-width:420px){.top{gap:6px;padding-inline:3vw}.brand img{height:36px;width:38px}.brand-copy strong{font-size:.9rem}.brand-copy small{display:none}.main-nav a{padding:8px;font-size:.78rem}.cartbtn{gap:5px;padding:7px 9px;font-size:.8rem}.cart-icon{width:17px;height:17px}}
+@media(max-width:640px){.top{gap:10px;padding:9px 4vw}.brand{gap:8px}.brand img{height:40px;width:44px}.brand-copy small{font-size:.55rem;letter-spacing:.08em}.main-nav{gap:0}.main-nav a{padding:8px 10px;font-size:.82rem}.account-link{padding:8px}.cartbtn{gap:6px;padding:8px 11px;font-size:.85rem}}
+@media(max-width:420px){.top{gap:6px;padding-inline:3vw}.brand img{height:36px;width:38px}.brand-copy strong{font-size:.9rem}.brand-copy small{display:none}.main-nav a{padding:8px;font-size:.78rem}.account-link{padding:7px}.account-icon{width:18px;height:18px}.cartbtn{gap:5px;padding:7px 9px;font-size:.8rem}.cart-icon{width:17px;height:17px}}
 .hero{background:radial-gradient(900px 420px at 90% -10%,rgba(25,240,255,.35),transparent 60%),linear-gradient(135deg,#04223a,#005f9e 60%,#0098cc);min-height:80vh;padding:9vh 5vw}
 .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;animation:drift 12s ease-in-out infinite alternate}
 .hero::before{width:340px;height:340px;background:var(--cyan);left:-90px;bottom:-130px}
@@ -186,6 +189,7 @@ label{display:block;font-size:.8rem;font-weight:600;margin:10px 0 4px;color:var(
 <div class="mq"><div class="mt"><span>Personalised engraving on bottles, watches and pendants</span><span>Gift-ready boxes</span><span>Order straight on WhatsApp</span><span>All prices in Ghana cedis</span></div></div>
 <header class="top"><a class="brand" href="#" data-act="home"><img id="logo" alt=""><span class="brand-copy"><strong>Lims Ent.</strong><small>SCENTS · STYLE · GIFTS</small></span></a>
 <nav class="main-nav" aria-label="Main navigation"><a href="#shop" data-act="shop">Shop</a><a href="#shop" data-act="gifts">Gifts</a></nav>
+<a class="account-link" href="#admin" aria-label="Admin sign in" title="Admin sign in"><svg class="account-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2z"/></svg></a>
 <button class="cartbtn" data-act="cart" aria-label="Open cart"><svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span>Cart</span><span id="cc" aria-live="polite">0</span></button></header>
 <main id="app"></main>
 <footer class="site-footer">
